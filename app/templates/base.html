@@ -55,9 +55,13 @@
     <nav>
       <ul class="nav-menu">
         <li><a href="{{ url_for('index') }}">Home</a></li>
+        {% if not current_user.is_authenticated %}
         <li><a href="{{ url_for('login') }}">Log in</a></li>
-        <li><a href="{{ url_for('profile') }}">Profile</a></li>
+        {% endif %}
+        {% if current_user.is_authenticated %}
         <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        {% endif %}
+        <li><a href="{{ url_for('profile') }}">Profile</a></li>
         <li><a href="pricing404.html">Pricing</a></li>
         <li><a href="tireBrands.html">Shop</a></li>
         <li><a href="scheduleAppointment.html">Appointment</a></li>
