@@ -17,6 +17,10 @@ article {
   color: white;
 }
 
+.blackFont{
+  color: black;
+}
+
 .form-signin {
   width: 100%;
   max-width: 330px;

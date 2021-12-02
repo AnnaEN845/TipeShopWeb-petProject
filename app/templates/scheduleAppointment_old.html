@@ -15,11 +15,11 @@
 
   <!-- Bootstrap core CSS -->
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
-  <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="../static/css/style.css">
   <!-- <link rel="icon" href=""> -->
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:wght@300&family=Sacramento&display=swap" rel="stylesheet">
@@ -44,7 +44,7 @@
 
 
   <!-- Custom styles for this template -->
-  <link href="/static/css/signin.css" rel="stylesheet">
+  <link href="../static/css/signin.css" rel="stylesheet">
 
 </head>
 
@@ -52,18 +52,18 @@
   <!-- Navigation bar -->
   <header>
     <div class="logo">
-      <p class="project-logo"><img class="logoImg" src="/static/Tires_photo/tire.png" alt="Tireshop logo"> Tire shop</p>
+      <p class="project-logo"><img class="logoImg" src="../static/Tires_photo/tire.png" alt="Tireshop logo"> Tire shop</p>
       <!-- <img class="logoImg" src="Tires_photo/tire.png" alt="Tireshop logo"> -->
 
     </div>
     <nav>
       <ul class="nav-menu">
-        <li><a href="/templates/index.html">Home</a></li>
-        <li><a href="/templates/pricing.html">Pricing</a></li>
-        <li><a href="/templates/tireBrands.html">Shop</a></li>
-        <li><a href="/templates/scheduleAppointment.html">Appointment</a></li>
-        <li><a href="/templates/aboutUs.html">AboutUs</a></li>
-        <li><a href="/templates/contactUs.html">ContactUs</a></li>
+        <li><a href="./templates/index.html">Home</a></li>
+        <li><a href="./templates/pricing.html">Pricing</a></li>
+        <li><a href="./templates/tireBrands.html">Shop</a></li>
+        <li><a href="./templates/scheduleAppointment.html">Appointment</a></li>
+        <li><a href="./templates/aboutUs.html">AboutUs</a></li>
+        <li><a href="./templates/contactUs.html">ContactUs</a></li>
       </ul>
     </nav>
   </header>
@@ -73,15 +73,16 @@
 
 <main class="form-signin">
   <!-- Later need change to user account page -->
-<form action="/template/index.html" method="post">
+<!--<form action="./template/index.html" method="post">-->
+<form method="post">
 
-  <h1 class="h3 mb-3 fw-bold whiteFont">Please sign in</h1>
+  <h1 class="h3 mb-3 fw-bold blackFont">Please sign in</h1>
   <label for="inputEmail" class="visually-hidden">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
   <label for="inputPassword" class="visually-hidden">Password</label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
   <div class="checkbox mb-3">
-    <label class="whiteFont">
+    <label class="blackFont">
       <input type="checkbox" value="remember-me"> Remember me
     </label>
   </div>

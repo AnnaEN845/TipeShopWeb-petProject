@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ super() }}
+
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+
+<table border="0" class="profile-table">
+	<td valign="top" class="profile-panel">
+		<ul class="profile-info">
+		<li>First name: {{ current_user.get_first_name() }}</li>
+		<li>Last name: {{ current_user.get_last_name() }}</li>
+		<li>Email: {{ current_user.get_email() }}</li>
+		</ul>
+	</td></tr>
+</table>
+{% endblock %}
