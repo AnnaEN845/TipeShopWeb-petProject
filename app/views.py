@@ -1,6 +1,6 @@
 import bcrypt
 from flask import url_for, render_template, request, flash, redirect
-from flask_login import login_user, current_user, login_required, logout_user
+from flask_login import current_user, login_required, logout_user
 
 from app import app, login_manager, app_funcs
 from app.models import User
