@@ -13,7 +13,7 @@
 <main class="form-signin">
   <!-- Later need change to user account page -->
 <!--<form action="./template/index.html" method="post">-->
-<form method="post">
+<form action="{{ url_for('login', next=request.args.get('next')) }}" method="post">
 
   <h1 class="h3 mb-3 fw-bold blackFont">Please sign in</h1>
   <label for="inputEmail" class="visually-hidden">Email address</label>

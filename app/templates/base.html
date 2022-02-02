@@ -48,7 +48,7 @@
   <!-- Navigation bar -->
   <header>
     <div class="logo">
-      <p class="project-logo"><img class="logoImg" src="../static/Tires_photo/tire.png" alt="Tireshop logo"> Tire shop</p>
+      <p class="project-logo"><img class="logoImg" src="../static/Tires_photo/tire.png" alt="Tireshop logo">Tire shop</p>
       <!-- <img class="logoImg" src="Tires_photo/tire.png" alt="Tireshop logo"> -->
 
     </div>
@@ -56,10 +56,10 @@
       <ul class="nav-menu">
         <li><a href="{{ url_for('index') }}">Home</a></li>
         {% if not current_user.is_authenticated %}
-        <li><a href="{{ url_for('login') }}">Log in</a></li>
+          <li><a href="{{ url_for('login') }}">Log in</a></li>
         {% endif %}
         {% if current_user.is_authenticated %}
-        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
         {% endif %}
         <li><a href="{{ url_for('profile') }}">Profile</a></li>
         <li><a href="pricing404.html">Pricing</a></li>
@@ -70,7 +70,7 @@
       </ul>
     </nav>
   </header>
-  <div class="iconAttribution">Icons made by <a class="iconAttrLink" href="https://www.flaticon.com/authors/ddara" title="dDara">dDara</a> from <a class="iconAttrLink" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<!--  <div class="iconAttribution">Icons made by <a class="iconAttrLink" href="https://www.flaticon.com/authors/ddara" title="dDara">dDara</a> from <a class="iconAttrLink" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
   <!-- page content -->
     {% block content %}
     {% endblock %}

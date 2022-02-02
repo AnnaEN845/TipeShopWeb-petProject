@@ -53,7 +53,7 @@ header {
 .logoImg{
   width: 15%;
   background-color: white;
-  margin-top: 25px;
+  margin: 20px;
   /* margin-bottom: 20px; */
 }
 .iconAttribution{
@@ -121,4 +121,16 @@ height: 400px;
 	border: 1px solid #FF4343;
 	background: #FF9C9C;
 	text-align: center;
+}
+
+.not-found-image {
+    border-radius: 10%;
+    width: 500px;
+    height: auto;
+    text-align: center;
+}
+
+.not-found {
+    text-align: center;
+    margin: 30px;
 }

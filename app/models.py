@@ -28,18 +28,8 @@ class User(db.Model, UserMixin):
     salt = db.Column('salt', db.String, nullable=False)
     created = db.Column('created', db.DateTime)
     group_id = db.Column('group_id', db.ForeignKey('users_groups.group_id'), nullable=False)
-    
     group = relationship('UsersGroup')
 
     def get_id(self):
         return self.user_id
-
-    def get_first_name(self):
-        return self.first_name
-
-    def get_last_name(self):
-        return self.last_name
-
-    def get_email(self):
-        return self.email if self.email else "No email"
     

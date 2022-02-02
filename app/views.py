@@ -1,14 +1,21 @@
-import bcrypt
 from flask import url_for, render_template, request, flash, redirect
-from flask_login import current_user, login_required, logout_user
+from flask_login import login_required, current_user
 
 from app import app, login_manager, app_funcs
 from app.models import User
+from loguru import logger
+
+logger.add("logger.log")
 
 
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html', title='404'), 404
 
 
 @app.route("/", methods=['GET'])
@@ -18,27 +25,23 @@ def index():
 
 @app.route("/login", methods=['POST', 'GET'])
 def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('profile'))
-    
     if request.method == "POST":
-        email = request.form.get('email')
-        password = request.form.get('password')
-        remember_me = True if request.form.get('remember-me') else False
-        app_funcs.login(email, password, remember_me)
-    
+        if not app_funcs.user_login():
+            flash('Email or password is not correct', 'error')
+        else:
+            return redirect(request.args.get("next") or url_for("profile"))
     return render_template("login.html")
 
 
 @app.route('/logout')
 @login_required
 def logout():
-    logout_user()
-    flash("You have successfully signed out ", "success")
+    app_funcs.user_logout()
     return redirect(url_for('login'))
 
 
 @app.route("/profile", methods=['GET'])
 @login_required
 def profile():
+    logger.info(f'User {current_user.email} has looked at his profile')
     return render_template("profile.html")

@@ -2,5 +2,10 @@
 
 {% block content %}
 {{ super() }}
-<p>Страница не найдена, вернуться на <a href="{{url_for('index')}}">главную</a> страницу.
+<div class="not-found">
+    <img class="not-found-image" src="../static/Tires_photo/404.png" alt="404 image">
+</div>
+<div>
+    <p align="center">Under construction. Return to the <a href="{{url_for('index')}}">main</a> page.</p>
+</div>
 {% endblock %}
